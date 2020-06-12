@@ -7,10 +7,6 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-type Person struct {
-	Name string `json:"name" binding:"required"`
-}
-
 func main() {
 	router := gin.Default()
 
