@@ -8,7 +8,7 @@ import (
 )
 
 type Person struct {
-	name string `json:"url" binding:"required"`
+	Name string `json:"name" binding:"required"`
 }
 
 func main() {
@@ -22,11 +22,10 @@ func main() {
 
 	router.POST("/api/name", func(context *gin.Context) {
 		var person Person
-		fmt.Println(context)
 		context.BindJSON(&person)
 		fmt.Println(person)
 		context.JSON(http.StatusOK, gin.H{
-			"message": fmt.Sprintf("Hello %v", person.name),
+			"message": fmt.Sprintf("Hello %v", person.Name),
 		})
 	})
 
