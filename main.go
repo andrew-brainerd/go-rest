@@ -25,5 +25,5 @@ func main() {
 		})
 	})
 
-	router.Run(":5000")
+	router.Run("0.0.0.0:5000")
 }
